@@ -58,7 +58,6 @@ This project demonstrates that a **fully localized, containerized AI agent** can
 ---
 
 ## 🏛️ Architecture
-![Architecture Overview](assets/architectureID.png)
 
 ```mermaid
 graph TD
