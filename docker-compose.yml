@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  hermes:
+    image: nousresearch/hermes-agent:latest
+    container_name: hermes_agent
+    ports:
+      - "8642:8642"
+      - "9119:9119"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+    command: ["tail", "-f", "/dev/null"]
+    volumes:
+      - hermes_data:/opt/data
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
+  hermes_data:
