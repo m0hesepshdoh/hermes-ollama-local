@@ -136,7 +136,7 @@ Both models were benchmarked inside the containerized environment under identica
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/hermes-ollama-local.git
+git clone https://github.com/m0hesepshdoh/hermes-ollama-local.git
 cd hermes-ollama-local
 
 # 2. Make the setup script executable
